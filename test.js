@@ -148,8 +148,9 @@ function build(){
 	
 	$('.basicAutoSelect').autoComplete();
 				$('.basicAutoSelect').on('autocomplete.select', function (evt, item) {
-					console.log('select');
-					$('.basicAutoSelectSelected').html(JSON.stringify(item));
+					console.log('select', item);
+					$('.basicAutoSelectSelected').html(item?JSON.stringify(item):'null');
+
 				});
 				
 
