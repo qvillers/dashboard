@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+<script src="test.js"></script>
+
+<body onLoad="build()">
+
+<div class="card-group">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+
+
+<h2> Lang & System </h2>
+<label for="system">System</label>
+<select id="system" class="form-control"></select>
+<label for="lang">Lang</label>
+<select id="lang" class="form-control"></select>
+
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card" style="">
+<div class="card-body">
+<h2> Links </h2>
+<div class="card-group">
+	<div class="card" style="">
+	<div class="card-body">
+		<h3> Sales App </h3>
+		<button type="button" link="sap/zfiori" class="ui5 online btn btn-primary btn-sm">Launchpad</button><br>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq/index.html#/home?PROCESS=0000" class="ui5 online btn btn-primary btn-sm">DARE</button><br>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq/index.html#/transaction-product-search?" class="ui5 online btn btn-primary btn-sm">Transaction Search</button>
+	</div>
+	</div>
+	
+	<div class="card" style="">
+	<div class="card-body">
+		<h3> Back Office </h3>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq_bo/index.html#/home?PROCESS=0000" class="ui5 online btn btn-primary btn-sm">DARE Offline</button><br>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq_bo/index.html#/transaction-product-search?" class="ui5 online btn btn-primary btn-sm">Transaction Search</button>
+	</div>
+	</div>
+	
+	<div class="card" style="">
+	<div class="card-body">
+		<h3> Offline </h3>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq_off/index.html#/home?PROCESS=0000" class="ui5 offline btn btn-primary btn-sm">Launchpad</button><br>
+		<button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq_off/index.html#/transaction-product-search?" class="ui5 offline btn btn-primary btn-sm">Transaction Search</button>
+	</div>
+	</div>
+	
+	<div class="card" style="">
+	<div class="card-body">
+		<h3> Others </h3>
+		<button type="button" link="~transaction=ZGEM_CS_MASS" class="ui5 webgui btn btn-primary btn-sm">Mass</button><br>
+		<button type="button" link="sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-theme=ca_theme_design_quartz@/sap/public/bc/themes/~client-001/&sap-language=EN#ZANOMALLYRSem-display" class="ui5 online btn btn-primary btn-sm">Anomaly Report</button>
+	</div>
+	</div>
+</div>
+
+
+</div>
+</div>
+
+<div class="card" style="">
+<div class="card-body">
+<h2> Boutique </h2>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Boutique</span>
+  </div>
+<select class="form-control basicAutoSelect" name="simple_select" 
+								placeholder="type to search..." 
+								data-url="boutique.json" autocomplete="off"></select>
+							<code class="basicAutoSelectSelected"></code>
+						</div>
+  
+  <button type="button" link="&zlang={LANG}&zbtq={BOUTIQUE}" class="ui5 changebtq lang boutique btn btn-primary btn-sm">Change Boutique</button>
+  <button type="button" link="&~transaction=*IQ09 WERK-LOW={BOUTIQUE};LAGER-LOW=0001;DYNP_OKCODE=/00" class="ui5 webgui boutique btn btn-primary btn-sm">Check Stock</button>
+  <button type="button" link="&~transaction=*WE02 MESTYP-LOW=*ZWPUBO*;PPPRN-LOW={BOUTIQUE};DYNP_OKCODE=/00" class="ui5 webgui boutique btn btn-primary btn-sm">Check IDOCs</button>
+
+  <div class="dropdown-divider"></div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">User</span>
+  </div>
+  <input type="text" class="form-control" id="user" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+ </div> 
+    <button type="button" link="&zlang={LANG}&zbtq={BOUTIQUE}&zuser={USER}" class="ui5 changebtq lang boutique user btn btn-primary btn-sm">Assign Boutique</button>
+  <button type="button" link="&~transaction=ZWEB_UI5_USER_MAINT%20P_USER={USER}&~okcode=ONLI" class="ui5 webgui user btn btn-primary btn-sm">Check User</button>
+  
+</div>
+  
+ </div>
+
+
+ 
+<div class="card" style="">
+<div class="card-body">
+
+<h2> Repairs </h2>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Repair Number</span>
+  </div>
+  <input type="text" id="repair" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+  <button type="button" link="sap/opu/odata/sap/ZWEB_CS_DR_SERVICE_SRV/NotificationShortLetterSet(%27{REPAIR}%27)/$value" class="ui5 online repair btn btn-primary btn-sm">Customer Receipt</button>
+  <button type="button" link="sap/opu/odata/sap/ZWEB_CS_DR_SERVICE_SRV/NotificationDiagnosisSet(%27{REPAIR}%27)/$value"  class="ui5 online repair btn btn-primary btn-sm">Diagnosis Sheet</button>
+  <button type="button" link="&~transaction=*IW52%20RIWO00-QMNUM={REPAIR};DYNP_OKCODE=/00" class="ui5 webgui repair btn btn-primary btn-sm">Edit in IW52</button>
+  <button type="button" link="sap/bc/ui5_ui5/sap/zlpdbtq/index.html#/transaction-product-search?PROCESS=0000&TYPE=null&NUMBER={REPAIR}" class="ui5 repair online btn btn-primary btn-sm">Search in DARE</button>
+</div>
+</div> 
+
+</body>
+</html>
